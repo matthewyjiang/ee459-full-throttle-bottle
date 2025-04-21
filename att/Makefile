@@ -1,21 +1,8 @@
 DEVICE     = attiny85
-CLOCK      = 8000000      # ATtiny85 typically runs at 8MHz internal
+CLOCK      = 8000000
 PROGRAMMER = -c usbtiny -P usb
 OBJECTS    = main.o
-FUSES      = -U hfuse:w:0x57:m -U lfuse:w:0xa2:m -U efuse:w:0xff:m
-
-# Fuse Low Byte = 0xa2   Fuse High Byte = 0x77   Fuse Extended Byte = 0xff
-# Bit 7: CKDIV8  = 1     Bit 7: RSTDISBL  = 0    Bit 7:
-#     6: CKOUT   = 0         6: DWEN      = 1        6:
-#     5: SUT1    = 1         5: SPIEN     = 0        5:
-#     4: SUT0    = 0         4: WDTON     = 1        4:
-#     3: CKSEL3  = 0         3: EESAVE    = 0        3:
-#     2: CKSEL2  = 1         2: BODLEVEL1 = 1        2: BODLEVEL2 = 1
-#     1: CKSEL1  = 0         1: BODLEVEL0 = 1        1: BODLEVEL1 = 1
-#     0: CKSEL0  = 0         0: BOOTRST   = 1        0: BODLEVEL0 = 1
-# Internal 8MHz oscillator, startup time 6 CK/14 CK + 64ms
-# Don't output clock on PORTB0, don't divide clock by 8
-# Serial program downloading enabled, debug wire disabled
+FUSES      = -U lfuse:w:0xE2:m -U hfuse:w:0xdf:m
 
 # Tune the lines below only if you know what you are doing:
 
@@ -71,4 +58,3 @@ disasm:	main.elf
 
 cpp:
 	$(COMPILE) -E main.c
-
