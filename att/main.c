@@ -93,7 +93,6 @@ int main(void) {
         read_buffer[0] = (adc_value >> 8) & 0xFF;  // High byte
         read_buffer[1] = adc_value & 0xFF;         // Low byte
         
-        
         pwm_duty = 0x00;
         
         // Perform one step of the PWM cycle

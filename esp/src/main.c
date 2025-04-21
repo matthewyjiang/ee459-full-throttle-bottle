@@ -2,6 +2,10 @@
 #include "freertos/task.h"
 #include "gpio.h"
 #include "i2c_master.h" // Include the ESP8266 I2C master driver
+#include "espconn.h"
+#include "user_config.h"
+#include <string.h>
+
 
 // Defines for I2C operations
 #define MAX_I2C_DEVICES 10    // Maximum number of I2C devices to scan for
@@ -20,6 +24,166 @@ static uint8_t i2c_device_count = 0;
 void i2c_scan_task(void* pvParameters);
 void i2c_read_write_task(void* pvParameters);
 bool i2c_scan_bus(void);
+
+#include "html.h"
+// HTML content to serve
+                          // HTTP server structures
+struct espconn esp_conn;
+esp_tcp esptcp;
+
+// HTTP response header
+const char *http_ok_header = "HTTP/1.1 200 OK\r\n"
+                            "Content-Type: text/html\r\n"
+                            "Connection: close\r\n\r\n";
+const char *http_json_header = "HTTP/1.1 200 OK\r\nContent-Type: application/json\r\nConnection: close\r\n\r\n";
+
+
+// Function prototypes
+void user_conn_init(void);
+void tcp_server_listen(void *arg);
+void tcp_server_recv_cb(void *arg, char *data, unsigned short len);
+void tcp_server_sent_cb(void *arg);
+void tcp_server_discon_cb(void *arg);
+
+
+// Called when client connects to the server
+void tcp_server_listen(void *arg) {
+    struct espconn *pesp_conn = (struct espconn *)arg;
+    
+    espconn_regist_recvcb(pesp_conn, tcp_server_recv_cb);
+    espconn_regist_sentcb(pesp_conn, tcp_server_sent_cb);
+    espconn_regist_disconcb(pesp_conn, tcp_server_discon_cb);
+}
+
+// Function to parse HTTP request and identify the endpoint
+void parse_request(char *data, char *method, char *path, int max_len) {
+    // Extract method (GET, POST, etc.)
+    char *method_end = os_strstr(data, " ");
+    if (method_end != NULL) {
+        int method_len = method_end - data;
+        if (method_len < max_len) {
+            os_memcpy(method, data, method_len);
+            method[method_len] = '\0';
+        }
+    }
+    
+    // Extract path
+    char *path_start = method_end + 1;
+    char *path_end = os_strstr(path_start, " ");
+    if (path_end != NULL) {
+        int path_len = path_end - path_start;
+        if (path_len < max_len) {
+            os_memcpy(path, path_start, path_len);
+            path[path_len] = '\0';
+        }
+    }
+}
+// Called when data is received from the client
+void tcp_server_recv_cb(void *arg, char *data, unsigned short len) {
+    struct espconn *pesp_conn = (struct espconn *)arg;
+    char method[10] = {0};
+    char path[50] = {0};
+    
+    // Parse the HTTP request
+    parse_request(data, method, path, sizeof(path));
+    
+    // Check if it's a GET request
+    if (strcmp(method, "GET") == 0) {
+        if (strcmp(path, "/") == 0) {
+            // Serve the main HTML page
+            char *response = (char *)os_zalloc(strlen(http_ok_header) + strlen(html_content) + 1);
+            if (response != NULL) {
+                strcpy(response, http_ok_header);
+                strcat(response, html_content);
+                espconn_send(pesp_conn, (uint8 *)response, strlen(response));
+                free(response);
+            } else {
+                espconn_send(pesp_conn, (uint8 *)"HTTP/1.1 500 Internal Server Error\r\n\r\n", 36);
+            }
+        } 
+        else if (strcmp(path, "/api/heat/on") == 0) {
+            // Turn ON the heat
+            
+            
+            // Send response
+            char *response = (char *)os_zalloc(strlen(http_json_header) + strlen(heat_on_response) + 1);
+            if (response != NULL) {
+                strcpy(response, http_json_header);
+                strcat(response, heat_on_response);
+                espconn_send(pesp_conn, (uint8 *)response, strlen(response));
+                free(response);
+            } else {
+                espconn_send(pesp_conn, (uint8 *)"HTTP/1.1 500 Internal Server Error\r\n\r\n", 36);
+            }
+        } 
+        else if (strcmp(path, "/api/heat/off") == 0) {
+            // Turn OFF the heat
+            
+            
+            
+            // Send response
+            char *response = (char *)zalloc(strlen(http_json_header) + strlen(heat_off_response) + 1);
+            if (response != NULL) {
+                strcpy(response, http_json_header);
+                strcat(response, heat_off_response);
+                espconn_send(pesp_conn, (uint8 *)response, strlen(response));
+                free(response);
+            } else {
+                espconn_send(pesp_conn, (uint8 *)"HTTP/1.1 500 Internal Server Error\r\n\r\n", 36);
+            }
+        } 
+        else if (strcmp(path, "/api/heat/status") == 0) {
+            // Return current heat status
+            const char *status_json = heat_state ? 
+                "{\"status\":\"on\",\"on\":true}" : 
+                "{\"status\":\"off\",\"on\":false}";
+            
+            // Send response
+            char *response = (char *)os_zalloc(strlen(http_json_header) + strlen(status_json) + 1);
+            if (response != NULL) {
+                strcpy(response, http_json_header);
+                strcat(response, status_json);
+                espconn_send(pesp_conn, (uint8 *)response, strlen(response));
+                free(response);
+            } else {
+                espconn_send(pesp_conn, (uint8 *)"HTTP/1.1 500 Internal Server Error\r\n\r\n", 36);
+            }
+        } 
+        else {
+            // 404 Not Found for unknown endpoints
+            espconn_send(pesp_conn, (uint8 *)"HTTP/1.1 404 Not Found\r\n\r\n", 26);
+        }
+    } else {
+        // Method not supported
+        espconn_send(pesp_conn, (uint8 *)"HTTP/1.1 405 Method Not Allowed\r\n\r\n", 35);
+    }
+}
+
+// Called when data is sent to the client
+void tcp_server_sent_cb(void *arg) {
+    struct espconn *pesp_conn = (struct espconn *)arg;
+    espconn_disconnect(pesp_conn);
+}
+
+// Called when connection is disconnected
+void tcp_server_discon_cb(void *arg) {
+    // Connection disconnected
+    os_printf("Client disconnected\n");
+}
+
+// Initialize the HTTP server
+void user_conn_init(void) {
+    esp_conn.type = ESPCONN_TCP;
+    esp_conn.state = ESPCONN_NONE;
+    esp_conn.proto.tcp = &esptcp;
+    esp_conn.proto.tcp->local_port = SERVER_PORT;
+    
+    espconn_regist_connectcb(&esp_conn, tcp_server_listen);
+    
+    espconn_accept(&esp_conn);
+    
+    os_printf("HTTP server started on port %d\n", SERVER_PORT);
+}
 
 /**
  * @brief Write data to an I2C device
@@ -233,6 +397,32 @@ void i2c_read_write_task(void* pvParameters)
     vTaskDelete(NULL);
 }
 
+
+void wifi_event_handler_cb(System_Event_t *event)
+{
+    if (event == NULL) {
+        return;
+    }
+
+    switch (event->event_id) {
+        case EVENT_STAMODE_GOT_IP:
+            os_printf("sta got ip ,create task and free heap size is %d\n", system_get_free_heap_size());
+            user_conn_init();
+            break;
+
+        case EVENT_STAMODE_CONNECTED:
+            os_printf("sta connected\n");
+            break;
+
+        case EVENT_STAMODE_DISCONNECTED:
+            wifi_station_connect();
+            break;
+
+        default:
+            break;
+    }
+}
+
 /******************************************************************************
  * FunctionName : user_init
  * Description  : entry of user application, init user function here
@@ -246,6 +436,18 @@ void user_init(void)
     i2c_master_gpio_init();
     i2c_master_init();
     
+    wifi_set_opmode(STATION_MODE); // Set WiFi mode to Station
+    struct station_config config;
+    bzero(&config, sizeof(struct station_config));
+    sprintf(config.ssid, SSID);
+    sprintf(config.password, PASSWORD);
+    wifi_station_set_config(&config); // Set WiFi configuration
+
+
+    wifi_station_set_hostname("ESP8266-WebServer");
+    wifi_set_event_handler_cb(wifi_event_handler_cb); 
+
+    wifi_station_connect();
     
     // Create I2C scanner task with lower priority
     xTaskCreate(&i2c_scan_task, "i2c_scan", 2048, NULL, 1, NULL);
