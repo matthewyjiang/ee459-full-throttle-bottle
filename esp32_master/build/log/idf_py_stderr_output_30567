@@ -1,0 +1,20 @@
+CMake Deprecation Warning at /Users/xiaolei/esp/esp-idf/components/mbedtls/mbedtls/CMakeLists.txt:21 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+CMake Error at /Users/xiaolei/esp/esp-idf/tools/cmake/component.cmake:498 (add_library):
+  add_library cannot create target "__idf_main" because another target with
+  the same name already exists.  The existing target is a static library
+  created in source directory
+  "/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/main".  See
+  documentation for policy CMP0002 for more details.
+Call Stack (most recent call first):
+  main/CMakeLists.txt:26 (idf_component_register)
+
+
+ninja: error: rebuilding 'build.ninja': subcommand failed

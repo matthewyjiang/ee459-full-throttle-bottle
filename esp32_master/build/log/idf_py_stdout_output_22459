@@ -1,0 +1,27 @@
+[1/10] Performing build step for 'bootloader'
+[1/1] cd /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/bootloader/esp-idf/esptool_py && /Users/xiaolei/.espressif/python_env/idf5.4_py3.13_env/bin/python /Users/xiaolei/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/bootloader/bootloader.bin
+Bootloader binary size 0x6580 bytes. 0xa80 bytes (9%) free.
+[2/10] No install step for 'bootloader'
+[3/10] Completed 'bootloader'
+[4/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/esp32_master.c.obj
+[5/10] Linking C static library esp-idf/main/libmain.a
+[6/10] Generating ld/sections.ld
+[7/10] Linking CXX executable esp32_master.elf
+[8/10] Generating binary image from built executable
+esptool.py v4.8.1
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/esp32_master.bin
+[9/10] cd /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/esp-idf/esptool_py && /Users/xiaolei/.espressif/python_env/idf5.4_py3.13_env/bin/python /Users/xiaolei/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/partition_table/partition-table.bin /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/esp32_master.bin
+esp32_master.bin binary size 0xc8ae0 bytes. Smallest app partition is 0x100000 bytes. 0x37520 bytes (22%) free.
+[9/10] cd /Users/xiaolei/esp/esp-idf/components/esptool_py && /opt/homebrew/bin/cmake -D IDF_PATH=/Users/xiaolei/esp/esp-idf -D "SERIAL_TOOL=/Users/xiaolei/.espressif/python_env/idf5.4_py3.13_env/bin/python;;/Users/xiaolei/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build -P /Users/xiaolei/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32 -p /dev/tty.usbserial-0001 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 esp32_master.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.8.1
+Serial port /dev/tty.usbserial-0001
+Connecting.........
+
+A fatal error occurred: Invalid head of packet (0x65): Possible serial noise or corruption.
+FAILED: CMakeFiles/flash /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/CMakeFiles/flash 
+cd /Users/xiaolei/esp/esp-idf/components/esptool_py && /opt/homebrew/bin/cmake -D IDF_PATH=/Users/xiaolei/esp/esp-idf -D "SERIAL_TOOL=/Users/xiaolei/.espressif/python_env/idf5.4_py3.13_env/bin/python;;/Users/xiaolei/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build -P /Users/xiaolei/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+ninja: build stopped: subcommand failed.

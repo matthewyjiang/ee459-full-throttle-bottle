@@ -1,0 +1,91 @@
+[0/1] Re-running CMake...
+-- Building ESP-IDF components for target esp32
+-- Project sdkconfig file /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/sdkconfig
+-- Compiler supported targets: xtensa-esp-elf
+-- App "esp32_master" version: e42ab8d-dirty
+-- Adding linker script /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/esp-idf/esp_system/ld/memory.ld
+-- Adding linker script /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/esp-idf/esp_system/ld/sections.ld.in
+-- Adding linker script /Users/xiaolei/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.ld
+-- Adding linker script /Users/xiaolei/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.api.ld
+-- Adding linker script /Users/xiaolei/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libgcc.ld
+-- Adding linker script /Users/xiaolei/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-data.ld
+-- Adding linker script /Users/xiaolei/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.syscalls.ld
+-- Adding linker script /Users/xiaolei/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-funcs.ld
+-- Adding linker script /Users/xiaolei/esp/esp-idf/components/soc/esp32/ld/esp32.peripherals.ld
+-- Components: app_trace app_update bootloader bootloader_support bt cmock console cxx driver efuse esp-tls esp_adc esp_app_format esp_bootloader_format esp_coex esp_common esp_driver_ana_cmpr esp_driver_cam esp_driver_dac esp_driver_gpio esp_driver_gptimer esp_driver_i2c esp_driver_i2s esp_driver_isp esp_driver_jpeg esp_driver_ledc esp_driver_mcpwm esp_driver_parlio esp_driver_pcnt esp_driver_ppa esp_driver_rmt esp_driver_sdio esp_driver_sdm esp_driver_sdmmc esp_driver_sdspi esp_driver_spi esp_driver_touch_sens esp_driver_tsens esp_driver_uart esp_driver_usb_serial_jtag esp_eth esp_event esp_gdbstub esp_hid esp_http_client esp_http_server esp_https_ota esp_https_server esp_hw_support esp_lcd esp_local_ctrl esp_mm esp_netif esp_netif_stack esp_partition esp_phy esp_pm esp_psram esp_ringbuf esp_rom esp_security esp_system esp_timer esp_vfs_console esp_wifi espcoredump esptool_py fatfs freertos hal heap http_parser idf_test ieee802154 json log lwip main mbedtls mqtt newlib nvs_flash nvs_sec_provider openthread partition_table perfmon protobuf-c protocomm pthread rt sdmmc soc spi_flash spiffs tcp_transport ulp unity usb vfs wear_levelling wifi_provisioning wpa_supplicant xtensa
+-- Component paths: /Users/xiaolei/esp/esp-idf/components/app_trace /Users/xiaolei/esp/esp-idf/components/app_update /Users/xiaolei/esp/esp-idf/components/bootloader /Users/xiaolei/esp/esp-idf/components/bootloader_support /Users/xiaolei/esp/esp-idf/components/bt /Users/xiaolei/esp/esp-idf/components/cmock /Users/xiaolei/esp/esp-idf/components/console /Users/xiaolei/esp/esp-idf/components/cxx /Users/xiaolei/esp/esp-idf/components/driver /Users/xiaolei/esp/esp-idf/components/efuse /Users/xiaolei/esp/esp-idf/components/esp-tls /Users/xiaolei/esp/esp-idf/components/esp_adc /Users/xiaolei/esp/esp-idf/components/esp_app_format /Users/xiaolei/esp/esp-idf/components/esp_bootloader_format /Users/xiaolei/esp/esp-idf/components/esp_coex /Users/xiaolei/esp/esp-idf/components/esp_common /Users/xiaolei/esp/esp-idf/components/esp_driver_ana_cmpr /Users/xiaolei/esp/esp-idf/components/esp_driver_cam /Users/xiaolei/esp/esp-idf/components/esp_driver_dac /Users/xiaolei/esp/esp-idf/components/esp_driver_gpio /Users/xiaolei/esp/esp-idf/components/esp_driver_gptimer /Users/xiaolei/esp/esp-idf/components/esp_driver_i2c /Users/xiaolei/esp/esp-idf/components/esp_driver_i2s /Users/xiaolei/esp/esp-idf/components/esp_driver_isp /Users/xiaolei/esp/esp-idf/components/esp_driver_jpeg /Users/xiaolei/esp/esp-idf/components/esp_driver_ledc /Users/xiaolei/esp/esp-idf/components/esp_driver_mcpwm /Users/xiaolei/esp/esp-idf/components/esp_driver_parlio /Users/xiaolei/esp/esp-idf/components/esp_driver_pcnt /Users/xiaolei/esp/esp-idf/components/esp_driver_ppa /Users/xiaolei/esp/esp-idf/components/esp_driver_rmt /Users/xiaolei/esp/esp-idf/components/esp_driver_sdio /Users/xiaolei/esp/esp-idf/components/esp_driver_sdm /Users/xiaolei/esp/esp-idf/components/esp_driver_sdmmc /Users/xiaolei/esp/esp-idf/components/esp_driver_sdspi /Users/xiaolei/esp/esp-idf/components/esp_driver_spi /Users/xiaolei/esp/esp-idf/components/esp_driver_touch_sens /Users/xiaolei/esp/esp-idf/components/esp_driver_tsens /Users/xiaolei/esp/esp-idf/components/esp_driver_uart /Users/xiaolei/esp/esp-idf/components/esp_driver_usb_serial_jtag /Users/xiaolei/esp/esp-idf/components/esp_eth /Users/xiaolei/esp/esp-idf/components/esp_event /Users/xiaolei/esp/esp-idf/components/esp_gdbstub /Users/xiaolei/esp/esp-idf/components/esp_hid /Users/xiaolei/esp/esp-idf/components/esp_http_client /Users/xiaolei/esp/esp-idf/components/esp_http_server /Users/xiaolei/esp/esp-idf/components/esp_https_ota /Users/xiaolei/esp/esp-idf/components/esp_https_server /Users/xiaolei/esp/esp-idf/components/esp_hw_support /Users/xiaolei/esp/esp-idf/components/esp_lcd /Users/xiaolei/esp/esp-idf/components/esp_local_ctrl /Users/xiaolei/esp/esp-idf/components/esp_mm /Users/xiaolei/esp/esp-idf/components/esp_netif /Users/xiaolei/esp/esp-idf/components/esp_netif_stack /Users/xiaolei/esp/esp-idf/components/esp_partition /Users/xiaolei/esp/esp-idf/components/esp_phy /Users/xiaolei/esp/esp-idf/components/esp_pm /Users/xiaolei/esp/esp-idf/components/esp_psram /Users/xiaolei/esp/esp-idf/components/esp_ringbuf /Users/xiaolei/esp/esp-idf/components/esp_rom /Users/xiaolei/esp/esp-idf/components/esp_security /Users/xiaolei/esp/esp-idf/components/esp_system /Users/xiaolei/esp/esp-idf/components/esp_timer /Users/xiaolei/esp/esp-idf/components/esp_vfs_console /Users/xiaolei/esp/esp-idf/components/esp_wifi /Users/xiaolei/esp/esp-idf/components/espcoredump /Users/xiaolei/esp/esp-idf/components/esptool_py /Users/xiaolei/esp/esp-idf/components/fatfs /Users/xiaolei/esp/esp-idf/components/freertos /Users/xiaolei/esp/esp-idf/components/hal /Users/xiaolei/esp/esp-idf/components/heap /Users/xiaolei/esp/esp-idf/components/http_parser /Users/xiaolei/esp/esp-idf/components/idf_test /Users/xiaolei/esp/esp-idf/components/ieee802154 /Users/xiaolei/esp/esp-idf/components/json /Users/xiaolei/esp/esp-idf/components/log /Users/xiaolei/esp/esp-idf/components/lwip /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/main /Users/xiaolei/esp/esp-idf/components/mbedtls /Users/xiaolei/esp/esp-idf/components/mqtt /Users/xiaolei/esp/esp-idf/components/newlib /Users/xiaolei/esp/esp-idf/components/nvs_flash /Users/xiaolei/esp/esp-idf/components/nvs_sec_provider /Users/xiaolei/esp/esp-idf/components/openthread /Users/xiaolei/esp/esp-idf/components/partition_table /Users/xiaolei/esp/esp-idf/components/perfmon /Users/xiaolei/esp/esp-idf/components/protobuf-c /Users/xiaolei/esp/esp-idf/components/protocomm /Users/xiaolei/esp/esp-idf/components/pthread /Users/xiaolei/esp/esp-idf/components/rt /Users/xiaolei/esp/esp-idf/components/sdmmc /Users/xiaolei/esp/esp-idf/components/soc /Users/xiaolei/esp/esp-idf/components/spi_flash /Users/xiaolei/esp/esp-idf/components/spiffs /Users/xiaolei/esp/esp-idf/components/tcp_transport /Users/xiaolei/esp/esp-idf/components/ulp /Users/xiaolei/esp/esp-idf/components/unity /Users/xiaolei/esp/esp-idf/components/usb /Users/xiaolei/esp/esp-idf/components/vfs /Users/xiaolei/esp/esp-idf/components/wear_levelling /Users/xiaolei/esp/esp-idf/components/wifi_provisioning /Users/xiaolei/esp/esp-idf/components/wpa_supplicant /Users/xiaolei/esp/esp-idf/components/xtensa
+-- Configuring done (1.9s)
+-- Generating done (0.3s)
+-- Build files have been written to: /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build
+[1/5] cd /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/esp-idf/esptool_py && /Users/xiaolei/.espressif/python_env/idf5.4_py3.13_env/bin/python /Users/xiaolei/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/partition_table/partition-table.bin /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/esp32_master.bin
+esp32_master.bin binary size 0xc8bd0 bytes. Smallest app partition is 0x100000 bytes. 0x37430 bytes (22%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] cd /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/bootloader/esp-idf/esptool_py && /Users/xiaolei/.espressif/python_env/idf5.4_py3.13_env/bin/python /Users/xiaolei/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/bootloader/bootloader.bin
+Bootloader binary size 0x6580 bytes. 0xa80 bytes (9%) free.
+[3/5] No install step for 'bootloader'
+[4/5] Completed 'bootloader'
+[4/5] cd /Users/xiaolei/esp/esp-idf/components/esptool_py && /opt/homebrew/bin/cmake -D IDF_PATH=/Users/xiaolei/esp/esp-idf -D "SERIAL_TOOL=/Users/xiaolei/.espressif/python_env/idf5.4_py3.13_env/bin/python;;/Users/xiaolei/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build -P /Users/xiaolei/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32 -p /dev/tty.usbserial-0001 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 esp32_master.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.8.1
+Serial port /dev/tty.usbserial-0001
+Connecting....
+Chip is ESP32-D0WD-V3 (revision v3.1)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: e8:6b:ea:df:5c:b4
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x000d8fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 25984 bytes to 16377...
+Writing at 0x00001000... (100 %)
+Wrote 25984 bytes (16377 compressed) at 0x00001000 in 0.6 seconds (effective 372.5 kbit/s)...
+Hash of data verified.
+Compressed 822224 bytes to 515572...
+Writing at 0x00010000... (3 %)
+Writing at 0x0001c71c... (6 %)
+Writing at 0x000261f6... (9 %)
+Writing at 0x000311bd... (12 %)
+Writing at 0x00036943... (15 %)
+Writing at 0x0003cb28... (18 %)
+Writing at 0x000428b1... (21 %)
+Writing at 0x0004877c... (25 %)
+Writing at 0x0004e415... (28 %)
+Writing at 0x00054675... (31 %)
+Writing at 0x00059887... (34 %)
+Writing at 0x0005ec6d... (37 %)
+Writing at 0x00064343... (40 %)
+Writing at 0x00069b69... (43 %)
+Writing at 0x0006ee64... (46 %)
+Writing at 0x00074554... (50 %)
+Writing at 0x0007a505... (53 %)
+Writing at 0x0007fcf2... (56 %)
+Writing at 0x00085979... (59 %)
+Writing at 0x0008b619... (62 %)
+Writing at 0x00090f40... (65 %)
+Writing at 0x00096a2f... (68 %)
+Writing at 0x0009c80c... (71 %)
+Writing at 0x000a2805... (75 %)
+Writing at 0x000a8247... (78 %)
+Writing at 0x000b1b35... (81 %)
+Writing at 0x000b8bdb... (84 %)
+Writing at 0x000bec00... (87 %)
+Writing at 0x000c51de... (90 %)
+Writing at 0x000caaeb... (93 %)
+Writing at 0x000d0e3d... (96 %)
+Writing at 0x000d6076... (100 %)
+Wrote 822224 bytes (515572 compressed) at 0x00010000 in 13.1 seconds (effective 501.5 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 346.3 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

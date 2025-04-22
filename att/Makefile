@@ -1,7 +1,7 @@
 DEVICE     = attiny85
 CLOCK      = 8000000
 PROGRAMMER = -c usbtiny -P usb
-OBJECTS    = main.o 
+OBJECTS    = main.o usiTwiSlave.o
 FUSES      = -U lfuse:w:0xE2:m -U hfuse:w:0xdf:m
 
 # Tune the lines below only if you know what you are doing:

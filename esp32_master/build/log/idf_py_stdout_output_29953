@@ -1,0 +1,66 @@
+[1/10] Performing build step for 'bootloader'
+[1/1] cd /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/bootloader/esp-idf/esptool_py && /Users/xiaolei/.espressif/python_env/idf5.4_py3.13_env/bin/python /Users/xiaolei/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/bootloader/bootloader.bin
+Bootloader binary size 0x6580 bytes. 0xa80 bytes (9%) free.
+[2/10] No install step for 'bootloader'
+[3/10] Completed 'bootloader'
+[4/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/esp32_master.c.obj
+/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/main/esp32_master.c:362:13: warning: 'connect_handler' defined but not used [-Wunused-function]
+  362 | static void connect_handler(void* arg, esp_event_base_t event_base, int32_t event_id, void* event_data) { /* ... Same as before ... */ }
+      |             ^~~~~~~~~~~~~~~
+/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/main/esp32_master.c:361:13: warning: 'disconnect_handler' defined but not used [-Wunused-function]
+  361 | static void disconnect_handler(void* arg, esp_event_base_t event_base, int32_t event_id, void* event_data) { /* ... Same as before ... */ }
+      |             ^~~~~~~~~~~~~~~~~~
+/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/main/esp32_master.c:360:13: warning: 'stop_webserver' defined but not used [-Wunused-function]
+  360 | static void stop_webserver(httpd_handle_t server_handle) { /* ... Same as before ... */ }
+      |             ^~~~~~~~~~~~~~
+/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/main/esp32_master.c:359:23: warning: 'start_webserver' defined but not used [-Wunused-function]
+  359 | static httpd_handle_t start_webserver(void) { /* ... Same as before, ensure uri_history is registered ... */ return NULL; }
+      |                       ^~~~~~~~~~~~~~~
+/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/main/esp32_master.c:353:18: warning: 'set_get_handler' defined but not used [-Wunused-function]
+  353 | static esp_err_t set_get_handler(httpd_req_t *req) { /* ... Same as before ... */ return ESP_OK; }
+      |                  ^~~~~~~~~~~~~~~
+/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/main/esp32_master.c:304:18: warning: 'history_get_handler' defined but not used [-Wunused-function]
+  304 | static esp_err_t history_get_handler(httpd_req_t *req) {
+      |                  ^~~~~~~~~~~~~~~~~~~
+/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/main/esp32_master.c:193:18: warning: 'root_get_handler' defined but not used [-Wunused-function]
+  193 | static esp_err_t root_get_handler(httpd_req_t *req)
+      |                  ^~~~~~~~~~~~~~~~
+/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/main/esp32_master.c:109:13: warning: 'obtain_time' defined but not used [-Wunused-function]
+  109 | static void obtain_time(void) { /* ... Same as before ... */ }
+      |             ^~~~~~~~~~~
+/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/main/esp32_master.c:108:13: warning: 'time_sync_notification_cb' defined but not used [-Wunused-function]
+  108 | static void time_sync_notification_cb(struct timeval *tv) { /* ... Same as before ... */ }
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/main/esp32_master.c:107:13: warning: 'initialize_sntp' defined but not used [-Wunused-function]
+  107 | static void initialize_sntp(void) { /* ... Same as before ... */ }
+      |             ^~~~~~~~~~~~~~~
+/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/main/esp32_master.c:105:13: warning: 'event_handler' defined but not used [-Wunused-function]
+  105 | static void event_handler(void* arg, esp_event_base_t event_base, int32_t event_id, void* event_data) { /* ... Same as before ... */ }
+      |             ^~~~~~~~~~~~~
+/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/main/esp32_master.c:104:18: warning: 'i2c_write_attiny_setpoint' defined but not used [-Wunused-function]
+  104 | static esp_err_t i2c_write_attiny_setpoint(uint8_t setpoint) { /* ... Same as before, including mutex for g_current_setpoint ... */ return ESP_OK; }
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/main/esp32_master.c:66:23: warning: 'server' defined but not used [-Wunused-variable]
+   66 | static httpd_handle_t server = NULL;
+      |                       ^~~~~~
+/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/main/esp32_master.c:65:13: warning: 'time_sync_notification_received' defined but not used [-Wunused-variable]
+   65 | static bool time_sync_notification_received = false;
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/main/esp32_master.c:55:12: warning: 's_retry_num' defined but not used [-Wunused-variable]
+   55 | static int s_retry_num = 0;
+      |            ^~~~~~~~~~~
+[5/10] Linking C static library esp-idf/main/libmain.a
+[6/10] Generating ld/sections.ld
+[7/10] Linking CXX executable esp32_master.elf
+[8/10] Generating binary image from built executable
+esptool.py v4.8.1
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/esp32_master.bin
+[9/10] cd /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/esp-idf/esptool_py && /Users/xiaolei/.espressif/python_env/idf5.4_py3.13_env/bin/python /Users/xiaolei/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/partition_table/partition-table.bin /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/esp32_master.bin
+esp32_master.bin binary size 0x2f720 bytes. Smallest app partition is 0x100000 bytes. 0xd08e0 bytes (81%) free.
+[9/10] cd /Users/xiaolei/esp/esp-idf/components/esptool_py && /opt/homebrew/bin/cmake -D IDF_PATH=/Users/xiaolei/esp/esp-idf -D "SERIAL_TOOL=/Users/xiaolei/.espressif/python_env/idf5.4_py3.13_env/bin/python;;/Users/xiaolei/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build -P /Users/xiaolei/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32 -p /dev/tty.usbserial-0001 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 esp32_master.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.8.1
+Serial port /dev/tty.usbserial-0001

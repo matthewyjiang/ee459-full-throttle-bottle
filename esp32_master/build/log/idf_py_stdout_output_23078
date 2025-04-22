@@ -1,0 +1,72 @@
+[1/5] cd /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/esp-idf/esptool_py && /Users/xiaolei/.espressif/python_env/idf5.4_py3.13_env/bin/python /Users/xiaolei/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/partition_table/partition-table.bin /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/esp32_master.bin
+esp32_master.bin binary size 0xc8b40 bytes. Smallest app partition is 0x100000 bytes. 0x374c0 bytes (22%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] cd /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/bootloader/esp-idf/esptool_py && /Users/xiaolei/.espressif/python_env/idf5.4_py3.13_env/bin/python /Users/xiaolei/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/bootloader/bootloader.bin
+Bootloader binary size 0x6580 bytes. 0xa80 bytes (9%) free.
+[3/5] No install step for 'bootloader'
+[4/5] Completed 'bootloader'
+[4/5] cd /Users/xiaolei/esp/esp-idf/components/esptool_py && /opt/homebrew/bin/cmake -D IDF_PATH=/Users/xiaolei/esp/esp-idf -D "SERIAL_TOOL=/Users/xiaolei/.espressif/python_env/idf5.4_py3.13_env/bin/python;;/Users/xiaolei/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build -P /Users/xiaolei/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32 -p /dev/tty.usbserial-0001 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 esp32_master.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.8.1
+Serial port /dev/tty.usbserial-0001
+Connecting....
+Chip is ESP32-D0WD-V3 (revision v3.1)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: e8:6b:ea:df:5c:b4
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x000d8fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 25984 bytes to 16377...
+Writing at 0x00001000... (100 %)
+Wrote 25984 bytes (16377 compressed) at 0x00001000 in 0.6 seconds (effective 367.9 kbit/s)...
+Hash of data verified.
+Compressed 822080 bytes to 515015...
+Writing at 0x00010000... (3 %)
+Writing at 0x0001cb81... (6 %)
+Writing at 0x00026419... (9 %)
+Writing at 0x000312e0... (12 %)
+Writing at 0x00036adf... (15 %)
+Writing at 0x0003cd2e... (18 %)
+Writing at 0x00042a1e... (21 %)
+Writing at 0x000488f3... (25 %)
+Writing at 0x0004e575... (28 %)
+Writing at 0x000547a5... (31 %)
+Writing at 0x000599a9... (34 %)
+Writing at 0x0005ed6b... (37 %)
+Writing at 0x0006446c... (40 %)
+Writing at 0x00069ccb... (43 %)
+Writing at 0x0006ef56... (46 %)
+Writing at 0x000746bd... (50 %)
+Writing at 0x0007a672... (53 %)
+Writing at 0x0007fee1... (56 %)
+Writing at 0x00085afc... (59 %)
+Writing at 0x0008b85d... (62 %)
+Writing at 0x000910ab... (65 %)
+Writing at 0x00096b9f... (68 %)
+Writing at 0x0009c9b0... (71 %)
+Writing at 0x000a29a8... (75 %)
+Writing at 0x000a8365... (78 %)
+Writing at 0x000b1c34... (81 %)
+Writing at 0x000b8cc6... (84 %)
+Writing at 0x000bef5c... (87 %)
+Writing at 0x000c5414... (90 %)
+Writing at 0x000cad25... (93 %)
+Writing at 0x000d10fa... (96 %)
+Writing at 0x000d62b0... (100 %)
+Wrote 822080 bytes (515015 compressed) at 0x00010000 in 13.1 seconds (effective 500.7 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 347.3 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

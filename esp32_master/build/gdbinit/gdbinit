@@ -1,0 +1,2 @@
+source /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/gdbinit/symbols
+source /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/gdbinit/connect

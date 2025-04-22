@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/CMakeFiles/bootloader
+/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/CMakeFiles/bootloader.rule
+/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/CMakeFiles/bootloader-complete.rule
+/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

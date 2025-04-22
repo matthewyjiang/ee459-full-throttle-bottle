@@ -1,0 +1,103 @@
+[1/10] Performing build step for 'bootloader'
+[1/1] cd /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/bootloader/esp-idf/esptool_py && /Users/xiaolei/.espressif/python_env/idf5.4_py3.13_env/bin/python /Users/xiaolei/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/bootloader/bootloader.bin
+Bootloader binary size 0x6580 bytes. 0xa80 bytes (9%) free.
+[2/10] No install step for 'bootloader'
+[3/10] Completed 'bootloader'
+[4/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/esp32_master.c.obj
+/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/main/esp32_master.c: In function 'initialize_sntp':
+/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/main/esp32_master.c:236:5: warning: 'sntp_setoperatingmode' is deprecated: use esp_sntp_setoperatingmode() instead [-Wdeprecated-declarations]
+  236 |     sntp_setoperatingmode(SNTP_OPMODE_POLL);
+      |     ^~~~~~~~~~~~~~~~~~~~~
+In file included from /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/main/esp32_master.c:19:
+/Users/xiaolei/esp/esp-idf/components/lwip/include/apps/esp_sntp.h:249:6: note: declared here
+  249 | void sntp_setoperatingmode(u8_t operating_mode)
+      |      ^~~~~~~~~~~~~~~~~~~~~
+/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/main/esp32_master.c:237:5: warning: 'sntp_setservername' is deprecated: use esp_sntp_setservername() instead [-Wdeprecated-declarations]
+  237 |     sntp_setservername(0, "pool.ntp.org"); // Use NTP pool server
+      |     ^~~~~~~~~~~~~~~~~~
+/Users/xiaolei/esp/esp-idf/components/lwip/include/apps/esp_sntp.h:263:6: note: declared here
+  263 | void sntp_setservername(u8_t idx, const char *server)
+      |      ^~~~~~~~~~~~~~~~~~
+/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/main/esp32_master.c:239:5: warning: 'sntp_init' is deprecated: use esp_sntp_init() instead [-Wdeprecated-declarations]
+  239 |     sntp_init();
+      |     ^~~~~~~~~
+/Users/xiaolei/esp/esp-idf/components/lwip/include/apps/esp_sntp.h:269:6: note: declared here
+  269 | void sntp_init(void)
+      |      ^~~~~~~~~
+[5/10] Linking C static library esp-idf/main/libmain.a
+[6/10] Generating ld/sections.ld
+[7/10] Linking CXX executable esp32_master.elf
+[8/10] Generating binary image from built executable
+esptool.py v4.8.1
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/esp32_master.bin
+[9/10] cd /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/esp-idf/esptool_py && /Users/xiaolei/.espressif/python_env/idf5.4_py3.13_env/bin/python /Users/xiaolei/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/partition_table/partition-table.bin /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/esp32_master.bin
+esp32_master.bin binary size 0xd25e0 bytes. Smallest app partition is 0x100000 bytes. 0x2da20 bytes (18%) free.
+[9/10] cd /Users/xiaolei/esp/esp-idf/components/esptool_py && /opt/homebrew/bin/cmake -D IDF_PATH=/Users/xiaolei/esp/esp-idf -D "SERIAL_TOOL=/Users/xiaolei/.espressif/python_env/idf5.4_py3.13_env/bin/python;;/Users/xiaolei/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build -P /Users/xiaolei/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32 -p /dev/tty.usbserial-0001 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 esp32_master.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.8.1
+Serial port /dev/tty.usbserial-0001
+Connecting.....
+Chip is ESP32-D0WD-V3 (revision v3.1)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: e8:6b:ea:df:5c:b4
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x000e2fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 25984 bytes to 16377...
+Writing at 0x00001000... (100 %)
+Wrote 25984 bytes (16377 compressed) at 0x00001000 in 0.6 seconds (effective 367.4 kbit/s)...
+Hash of data verified.
+Compressed 861664 bytes to 540260...
+Writing at 0x00010000... (3 %)
+Writing at 0x0001ca3c... (6 %)
+Writing at 0x00026e3f... (9 %)
+Writing at 0x00030e42... (12 %)
+Writing at 0x00036745... (15 %)
+Writing at 0x0003c810... (18 %)
+Writing at 0x0004260c... (21 %)
+Writing at 0x00047f84... (24 %)
+Writing at 0x0004db88... (27 %)
+Writing at 0x000537e5... (30 %)
+Writing at 0x00059345... (33 %)
+Writing at 0x0005f2f9... (36 %)
+Writing at 0x00065084... (39 %)
+Writing at 0x0006b45a... (42 %)
+Writing at 0x00070565... (45 %)
+Writing at 0x0007591b... (48 %)
+Writing at 0x0007b0c8... (51 %)
+Writing at 0x000808b4... (54 %)
+Writing at 0x00085bf5... (57 %)
+Writing at 0x0008b22a... (60 %)
+Writing at 0x00091073... (63 %)
+Writing at 0x000967cd... (66 %)
+Writing at 0x0009c645... (69 %)
+Writing at 0x000a27a1... (72 %)
+Writing at 0x000a81f6... (75 %)
+Writing at 0x000ad902... (78 %)
+Writing at 0x000b43e9... (81 %)
+Writing at 0x000be792... (84 %)
+Writing at 0x000c46aa... (87 %)
+Writing at 0x000cbca0... (90 %)
+Writing at 0x000d1626... (93 %)
+Writing at 0x000d75e4... (96 %)
+Writing at 0x000dcf92... (100 %)
+Wrote 861664 bytes (540260 compressed) at 0x00010000 in 13.7 seconds (effective 501.7 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 346.8 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
