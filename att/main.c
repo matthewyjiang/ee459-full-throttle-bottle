@@ -1,19 +1,21 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <util/delay.h> 
+
 #include "i2c_secondary.c"
 
 #define FOSC 8000000 // Clock Speed
 #define BDIV (FOSC / 100000 - 16) / 2 + 1
 #define DEVICE_ADDRESS 0x50 // I2C Slave Address
 
-// Define your I2C slave address (7-bit)
-#define MY_I2C_ADDRESS 0x42
-
-#define READ_BUFFER_SIZE 5 // Size of the read buffer
 #define ADC_CHANNEL 3     // Using ADC0 (can be 0-7 for most AVRs)
 
-unsigned char read_buffer[READ_BUFFER_SIZE]; // Buffer to store read data
+// Define I2C slave address
+#define SLAVE_ADDRESS 0x26
+#define READ_BUFFER_SIZE 	5
+
+
+
 
 // Function to initialize ADC
 void adc_init(void) {
@@ -64,15 +66,12 @@ void better_software_pwm(uint8_t duty_cycle) {
     }
 }
 
+unsigned char read_buffer[READ_BUFFER_SIZE];
 
 int main(void) {
     // Initialize buffers
-    for (int i = 0; i < READ_BUFFER_SIZE; i++) {
-        read_buffer[i] = 0x00; // Initialize the read buffer
-    }
-
-    // Initialize I2C secondary
-    i2c_secondary_init(MY_I2C_ADDRESS, read_buffer, READ_BUFFER_SIZE);
+    i2c_secondary_init(DEVICE_ADDRESS, read_buffer, READ_BUFFER_SIZE);
+    // Set up I2C
     
     // Initialize ADC
     adc_init();
@@ -86,17 +85,15 @@ int main(void) {
     uint8_t pwm_duty = 128; // Default duty cycle value
     
     while (1) {
+
         // Read ADC value
         uint16_t adc_value = adc_read();
-        
-        // Store ADC value in read buffer
-        read_buffer[0] = (adc_value >> 8) & 0xFF;  // High byte
-        read_buffer[1] = adc_value & 0xFF;         // Low byte
+
         
         pwm_duty = 0x00;
         
         // Perform one step of the PWM cycle
-        better_software_pwm(pwm_duty);
+        // better_software_pwm(pwm_duty);
         
         // Small delay to control PWM frequency
         // Adjust this value to get desired frequency
@@ -106,3 +103,4 @@ int main(void) {
         // blocking the entire PWM cycle
     }
 }
+

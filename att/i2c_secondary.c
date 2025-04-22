@@ -29,6 +29,7 @@ void i2c_secondary_send_nack(int next_status, int status_after_nack, int USISR_a
 	DDRB |= (1 << PIN_SDA); // output to send the nack (auto-low when changing)
 	USISR = USISR_CLOCK_1_BIT;
 
+
 	i2c_secondary_status = next_status;
 	i2c_secondary_status_after_nack = status_after_nack;
 	i2c_secondary_USISR_after_nack = USISR_after_nack;
