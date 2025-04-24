@@ -25,8 +25,8 @@
  #ifndef __USER_CONFIG_H__
  #define __USER_CONFIG_H__
  
- #define SSID         "jiang"        /* Wi-Fi SSID */
- #define PASSWORD     "emgymlol"     /* Wi-Fi Password */
+ #define SSID         "Xiaolei"        /* Wi-Fi SSID */
+ #define PASSWORD     "pear8888"     /* Wi-Fi Password */
  #define SERVER_PORT 80
  
  #endif

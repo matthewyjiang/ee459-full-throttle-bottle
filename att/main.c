@@ -17,9 +17,9 @@
 #define CMD_SET_SETPOINT 0x01
 
 // PID Parameters (MUST BE TUNED!)
-#define PID_KP 2.0
-#define PID_KI 0.5
-#define PID_KD 1.0
+#define PID_KP 6.0
+#define PID_KI 0.1
+#define PID_KD 0.0
 #define PID_SAMPLE_TIME_MS 500
 
 // ADC Config

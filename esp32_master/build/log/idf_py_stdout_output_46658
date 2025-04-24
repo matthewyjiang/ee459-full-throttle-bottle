@@ -1,0 +1,353 @@
+[1/10] Performing build step for 'bootloader'
+[1/1] cd /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/bootloader/esp-idf/esptool_py && /Users/xiaolei/.espressif/python_env/idf5.4_py3.13_env/bin/python /Users/xiaolei/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/bootloader/bootloader.bin
+Bootloader binary size 0x6580 bytes. 0xa80 bytes (9%) free.
+[2/10] No install step for 'bootloader'
+[3/10] Completed 'bootloader'
+[4/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/esp32_master.c.obj
+FAILED: esp-idf/main/CMakeFiles/__idf_main.dir/esp32_master.c.obj 
+/Users/xiaolei/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc -DESP_PLATFORM -DIDF_VER=\"v5.4.1\" -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DSOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ -D_GLIBCXX_HAVE_POSIX_SEMAPHORE -D_GLIBCXX_USE_POSIX_SEMAPHORE -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -I/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/config -I/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/main -I/Users/xiaolei/esp/esp-idf/components/newlib/platform_include -I/Users/xiaolei/esp/esp-idf/components/freertos/config/include -I/Users/xiaolei/esp/esp-idf/components/freertos/config/include/freertos -I/Users/xiaolei/esp/esp-idf/components/freertos/config/xtensa/include -I/Users/xiaolei/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include -I/Users/xiaolei/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include -I/Users/xiaolei/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos -I/Users/xiaolei/esp/esp-idf/components/freertos/esp_additions/include -I/Users/xiaolei/esp/esp-idf/components/esp_hw_support/include -I/Users/xiaolei/esp/esp-idf/components/esp_hw_support/include/soc -I/Users/xiaolei/esp/esp-idf/components/esp_hw_support/include/soc/esp32 -I/Users/xiaolei/esp/esp-idf/components/esp_hw_support/dma/include -I/Users/xiaolei/esp/esp-idf/components/esp_hw_support/ldo/include -I/Users/xiaolei/esp/esp-idf/components/esp_hw_support/debug_probe/include -I/Users/xiaolei/esp/esp-idf/components/esp_hw_support/port/esp32/. -I/Users/xiaolei/esp/esp-idf/components/esp_hw_support/port/esp32/include -I/Users/xiaolei/esp/esp-idf/components/heap/include -I/Users/xiaolei/esp/esp-idf/components/heap/tlsf -I/Users/xiaolei/esp/esp-idf/components/log/include -I/Users/xiaolei/esp/esp-idf/components/soc/include -I/Users/xiaolei/esp/esp-idf/components/soc/esp32 -I/Users/xiaolei/esp/esp-idf/components/soc/esp32/include -I/Users/xiaolei/esp/esp-idf/components/soc/esp32/register -I/Users/xiaolei/esp/esp-idf/components/hal/platform_port/include -I/Users/xiaolei/esp/esp-idf/components/hal/esp32/include -I/Users/xiaolei/esp/esp-idf/components/hal/include -I/Users/xiaolei/esp/esp-idf/components/esp_rom/include -I/Users/xiaolei/esp/esp-idf/components/esp_rom/esp32/include -I/Users/xiaolei/esp/esp-idf/components/esp_rom/esp32/include/esp32 -I/Users/xiaolei/esp/esp-idf/components/esp_rom/esp32 -I/Users/xiaolei/esp/esp-idf/components/esp_common/include -I/Users/xiaolei/esp/esp-idf/components/esp_system/include -I/Users/xiaolei/esp/esp-idf/components/esp_system/port/soc -I/Users/xiaolei/esp/esp-idf/components/esp_system/port/include/private -I/Users/xiaolei/esp/esp-idf/components/xtensa/esp32/include -I/Users/xiaolei/esp/esp-idf/components/xtensa/include -I/Users/xiaolei/esp/esp-idf/components/xtensa/deprecated_include -I/Users/xiaolei/esp/esp-idf/components/lwip/include -I/Users/xiaolei/esp/esp-idf/components/lwip/include/apps -I/Users/xiaolei/esp/esp-idf/components/lwip/include/apps/sntp -I/Users/xiaolei/esp/esp-idf/components/lwip/lwip/src/include -I/Users/xiaolei/esp/esp-idf/components/lwip/port/include -I/Users/xiaolei/esp/esp-idf/components/lwip/port/freertos/include -I/Users/xiaolei/esp/esp-idf/components/lwip/port/esp32xx/include -I/Users/xiaolei/esp/esp-idf/components/lwip/port/esp32xx/include/arch -I/Users/xiaolei/esp/esp-idf/components/lwip/port/esp32xx/include/sys -I/Users/xiaolei/esp/esp-idf/components/nvs_flash/include -I/Users/xiaolei/esp/esp-idf/components/esp_partition/include -I/Users/xiaolei/esp/esp-idf/components/esp_event/include -I/Users/xiaolei/esp/esp-idf/components/esp_netif/include -I/Users/xiaolei/esp/esp-idf/components/esp_wifi/include -I/Users/xiaolei/esp/esp-idf/components/esp_wifi/include/local -I/Users/xiaolei/esp/esp-idf/components/esp_wifi/wifi_apps/include -I/Users/xiaolei/esp/esp-idf/components/esp_wifi/wifi_apps/nan_app/include -I/Users/xiaolei/esp/esp-idf/components/esp_phy/include -I/Users/xiaolei/esp/esp-idf/components/esp_phy/esp32/include -I/Users/xiaolei/esp/esp-idf/components/json/cJSON -I/Users/xiaolei/esp/esp-idf/components/driver/deprecated -I/Users/xiaolei/esp/esp-idf/components/driver/i2c/include -I/Users/xiaolei/esp/esp-idf/components/driver/touch_sensor/include -I/Users/xiaolei/esp/esp-idf/components/driver/twai/include -I/Users/xiaolei/esp/esp-idf/components/driver/touch_sensor/esp32/include -I/Users/xiaolei/esp/esp-idf/components/esp_pm/include -I/Users/xiaolei/esp/esp-idf/components/esp_ringbuf/include -I/Users/xiaolei/esp/esp-idf/components/esp_driver_gpio/include -I/Users/xiaolei/esp/esp-idf/components/esp_driver_pcnt/include -I/Users/xiaolei/esp/esp-idf/components/esp_driver_gptimer/include -I/Users/xiaolei/esp/esp-idf/components/esp_driver_spi/include -I/Users/xiaolei/esp/esp-idf/components/esp_driver_mcpwm/include -I/Users/xiaolei/esp/esp-idf/components/esp_driver_ana_cmpr/include -I/Users/xiaolei/esp/esp-idf/components/esp_driver_i2s/include -I/Users/xiaolei/esp/esp-idf/components/esp_driver_sdmmc/include -I/Users/xiaolei/esp/esp-idf/components/sdmmc/include -I/Users/xiaolei/esp/esp-idf/components/esp_driver_sdspi/include -I/Users/xiaolei/esp/esp-idf/components/esp_driver_sdio/include -I/Users/xiaolei/esp/esp-idf/components/esp_driver_dac/include -I/Users/xiaolei/esp/esp-idf/components/esp_driver_rmt/include -I/Users/xiaolei/esp/esp-idf/components/esp_driver_tsens/include -I/Users/xiaolei/esp/esp-idf/components/esp_driver_sdm/include -I/Users/xiaolei/esp/esp-idf/components/esp_driver_i2c/include -I/Users/xiaolei/esp/esp-idf/components/esp_driver_uart/include -I/Users/xiaolei/esp/esp-idf/components/vfs/include -I/Users/xiaolei/esp/esp-idf/components/esp_driver_ledc/include -I/Users/xiaolei/esp/esp-idf/components/esp_driver_parlio/include -I/Users/xiaolei/esp/esp-idf/components/esp_driver_usb_serial_jtag/include -I/Users/xiaolei/esp/esp-idf/components/esp_http_server/include -I/Users/xiaolei/esp/esp-idf/components/http_parser -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -fdiagnostics-color=always -ffunction-sections -fdata-sections -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-error=extra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -Og -fno-shrink-wrap -fmacro-prefix-map=/Users/xiaolei/ee459-full-throttle-bottle/esp32_master=. -fmacro-prefix-map=/Users/xiaolei/esp/esp-idf=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu17 -Wno-old-style-declaration -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/esp32_master.c.obj -MF esp-idf/main/CMakeFiles/__idf_main.dir/esp32_master.c.obj.d -o esp-idf/main/CMakeFiles/__idf_main.dir/esp32_master.c.obj -c /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/main/esp32_master.c
+/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/main/esp32_master.c: In function 'root_get_handler':
+/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/main/esp32_master.c:403:9: error: '<style>body { font-family: s...' directive output truncated writing 1673 bytes into a region of size 1500 [-Werror=format-truncation=]
+  403 |         "<style>"
+      |         ^~~~~~~~~
+/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/main/esp32_master.c:421:29: note: format string is defined here
+  403 |         "<style>"
+      |          ~~~~~~~~            
+  404 |         "body { font-family: sans-serif; padding: 15px; background-color: #f8f9fa; margin: 0; }"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  405 |         ".container { max-width: 800px; margin: 20px auto; background-color: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  406 |         "h1 { color: #343a40; text-align: center; margin-bottom: 30px; }"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  407 |         ".heater-card { background-color: #f1f3f5; border: 1px solid #dee2e6; border-radius: 6px; padding: 20px; margin-bottom: 25px; }"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  408 |         ".heater-title { font-size: 1.4em; font-weight: bold; color: #495057; margin-bottom: 15px; border-bottom: 1px solid #ced4da; padding-bottom: 10px; }"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  409 |         ".data-item { margin-bottom: 12px; font-size: 1.1em; display: flex; justify-content: space-between; align-items: center; }"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  410 |         ".data-label { font-weight: bold; color: #6c757d; min-width: 150px; }"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  411 |         ".data-value { color: #007bff; font-weight: bold; }"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  412 |         ".data-value.error { color: #dc3545; }"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  413 |         ".form-group { margin-top: 20px; padding-top: 15px; border-top: 1px solid #e9ecef; text-align: center; }"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  414 |         ".form-group label { display: block; margin-bottom: 12px; font-weight: bold; color: #555; }"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  415 |         ".button-group { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  416 |         "button { padding: 10px 15px; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 1em; transition: background-color 0.2s ease; min-width: 100px; }"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  417 |         "button:hover { opacity: 0.85; }"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  418 |         ".btn-20 { background-color: #6c757d; } /* Grey */"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  419 |         ".btn-30 { background-color: #17a2b8; } /* Teal */"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  420 |         ".btn-40 { background-color: #ffc107; } /* Yellow */"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  421 |         ".btn-60 { background-color: #fd7e14; } /* Orange */"
+      |         ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  422 |         ".btn-80 { background-color: #dc3545; } /* Red */"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  423 |         "#status { margin-top: 20px; text-align: center; font-style: italic; color: #6c757d; }"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  424 |         "</style>"
+      |         ~~~~~~~~~            
+/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/main/esp32_master.c:402:5: note: 'snprintf' output 1674 bytes into a destination of size 1500
+  402 |     snprintf(chunk_buf, sizeof(chunk_buf),
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  403 |         "<style>"
+      |         ~~~~~~~~~
+  404 |         "body { font-family: sans-serif; padding: 15px; background-color: #f8f9fa; margin: 0; }"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  405 |         ".container { max-width: 800px; margin: 20px auto; background-color: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  406 |         "h1 { color: #343a40; text-align: center; margin-bottom: 30px; }"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  407 |         ".heater-card { background-color: #f1f3f5; border: 1px solid #dee2e6; border-radius: 6px; padding: 20px; margin-bottom: 25px; }"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  408 |         ".heater-title { font-size: 1.4em; font-weight: bold; color: #495057; margin-bottom: 15px; border-bottom: 1px solid #ced4da; padding-bottom: 10px; }"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  409 |         ".data-item { margin-bottom: 12px; font-size: 1.1em; display: flex; justify-content: space-between; align-items: center; }"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  410 |         ".data-label { font-weight: bold; color: #6c757d; min-width: 150px; }"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  411 |         ".data-value { color: #007bff; font-weight: bold; }"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  412 |         ".data-value.error { color: #dc3545; }"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  413 |         ".form-group { margin-top: 20px; padding-top: 15px; border-top: 1px solid #e9ecef; text-align: center; }"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  414 |         ".form-group label { display: block; margin-bottom: 12px; font-weight: bold; color: #555; }"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  415 |         ".button-group { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  416 |         "button { padding: 10px 15px; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 1em; transition: background-color 0.2s ease; min-width: 100px; }"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  417 |         "button:hover { opacity: 0.85; }"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  418 |         ".btn-20 { background-color: #6c757d; } /* Grey */"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  419 |         ".btn-30 { background-color: #17a2b8; } /* Teal */"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  420 |         ".btn-40 { background-color: #ffc107; } /* Yellow */"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  421 |         ".btn-60 { background-color: #fd7e14; } /* Orange */"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  422 |         ".btn-80 { background-color: #dc3545; } /* Red */"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  423 |         "#status { margin-top: 20px; text-align: center; font-style: italic; color: #6c757d; }"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  424 |         "</style>"
+      |         ~~~~~~~~~~
+  425 |     );
+      |     ~
+/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/main/esp32_master.c:432:9: error: '<script>function updateData(...' directive output truncated writing 2410 bytes into a region of size 1500 [-Werror=format-truncation=]
+  432 |         "<script>"
+      |         ^~~~~~~~~~
+/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/main/esp32_master.c:468:43: note: format string is defined here
+  432 |         "<script>"
+      |          ~~~~~~~~~                         
+  433 |         "function updateData() {"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~          
+  434 |         "  fetch('/data')"
+      |         ~~~~~~~~~~~~~~~~~~                 
+  435 |         "    .then(response => response.json())"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  436 |         "    .then(data => {"
+      |         ~~~~~~~~~~~~~~~~~~~~~              
+  437 |         "      if (data && data.heaters) {"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  438 |         "        data.heaters.forEach(heater => {"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  439 |         "          const addrHex = '0x' + heater.address.toString(16).toUpperCase().padStart(2, '0');"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  440 |         "          const tempElement = document.getElementById('currentTemp_' + addrHex);"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  441 |         "          const setElement = document.getElementById('currentSet_' + addrHex);"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  442 |         "          if (tempElement) {"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~     
+  443 |         "             if (heater.read_ok) { "
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  444 |         "               tempElement.innerText = heater.current.toFixed(2) + ' C';"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  445 |         "               tempElement.classList.remove('error'); "
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  446 |         "             } else { "
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~           
+  447 |         "               tempElement.innerText = 'Read Error';"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  448 |         "               tempElement.classList.add('error'); "
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  449 |         "             }"
+      |         ~~~~~~~~~~~~~~~~                   
+  450 |         "          }"
+      |         ~~~~~~~~~~~~~                      
+  451 |         "          if (setElement) {"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~      
+  452 |         "             setElement.innerText = heater.setpoint + ' C';"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  453 |         "          }"
+      |         ~~~~~~~~~~~~~                      
+  454 |         "        });"
+      |         ~~~~~~~~~~~~~                      
+  455 |         "        document.getElementById('status').innerText = 'Data updated: ' + new Date().toLocaleTimeString();"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  456 |         "      } else {"
+      |         ~~~~~~~~~~~~~~~~                   
+  457 |         "        document.getElementById('status').innerText = 'Error fetching data or no heaters found.';"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  458 |         "      }"
+      |         ~~~~~~~~~                          
+  459 |         "    })"
+      |         ~~~~~~~~                           
+  460 |         "    .catch(error => {"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~            
+  461 |         "       console.error('Error fetching data:', error);"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  462 |         "       document.getElementById('status').innerText = 'Fetch error: ' + error;"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  463 |         "     });"
+      |         ~~~~~~~~~~                         
+  464 |         "}"
+      |         ~~~                                
+  465 |         "function setTemp(address, temp) {"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  466 |         "  const addrHex = '0x' + address.toString(16).toUpperCase().padStart(2, '0');"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  467 |         "  document.getElementById('status').innerText = 'Setting ' + addrHex + ' to ' + temp + ' C...';"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  468 |         "  fetch(`/set?address=${address}&temp=${temp}`)" // Use template literal
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  469 |         "    .then(response => {"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~          
+  470 |         "       if (response.ok) { "
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~       
+  471 |         "         console.log('Setpoint set successfully for ' + addrHex + ' to ' + temp + ' C'); "
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  472 |         "         document.getElementById('status').innerText = 'Setpoint for ' + addrHex + ' set to ' + temp + ' C.';"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  473 |         "         setTimeout(updateData, 500); /* Update data shortly after set */"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  474 |         "       } else { "
+      |         ~~~~~~~~~~~~~~~~~~                 
+  475 |         "         console.error('Failed to set setpoint for ' + addrHex);"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  476 |         "         response.text().then(text => { document.getElementById('status').innerText = 'Failed to set ' + addrHex + ': ' + text; });"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  477 |         "       } "
+      |         ~~~~~~~~~~~                        
+  478 |         "    })"
+      |         ~~~~~~~~                           
+  479 |         "    .catch(error => { "
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~           
+  480 |         "      console.error('Error setting temperature for ' + addrHex + ':', error); "
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  481 |         "      document.getElementById('status').innerText = 'Error sending setpoint for ' + addrHex + ': ' + error;"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  482 |         "    });"
+      |         ~~~~~~~~~                          
+  483 |         "  return false; "
+      |         ~~~~~~~~~~~~~~~~~~                 
+  484 |         "}"
+      |         ~~~                                
+  485 |         "document.addEventListener('DOMContentLoaded', () => {"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  486 |         "  updateData();"
+      |         ~~~~~~~~~~~~~~~~~                  
+  487 |         "  setInterval(updateData, 5000);"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+  488 |         "});"
+      |         ~~~~~                              
+  489 |         "</script>"
+      |         ~~~~~~~~~~~                        
+  490 |         "</head>" // Close head tag
+      |         ~~~~~~~~                           
+/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/main/esp32_master.c:431:5: note: 'snprintf' output 2411 bytes into a destination of size 1500
+  431 |     snprintf(chunk_buf, sizeof(chunk_buf),
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  432 |         "<script>"
+      |         ~~~~~~~~~~
+  433 |         "function updateData() {"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~
+  434 |         "  fetch('/data')"
+      |         ~~~~~~~~~~~~~~~~~~
+  435 |         "    .then(response => response.json())"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  436 |         "    .then(data => {"
+      |         ~~~~~~~~~~~~~~~~~~~~~
+  437 |         "      if (data && data.heaters) {"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  438 |         "        data.heaters.forEach(heater => {"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  439 |         "          const addrHex = '0x' + heater.address.toString(16).toUpperCase().padStart(2, '0');"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  440 |         "          const tempElement = document.getElementById('currentTemp_' + addrHex);"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  441 |         "          const setElement = document.getElementById('currentSet_' + addrHex);"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  442 |         "          if (tempElement) {"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  443 |         "             if (heater.read_ok) { "
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  444 |         "               tempElement.innerText = heater.current.toFixed(2) + ' C';"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  445 |         "               tempElement.classList.remove('error'); "
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  446 |         "             } else { "
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~
+  447 |         "               tempElement.innerText = 'Read Error';"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  448 |         "               tempElement.classList.add('error'); "
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  449 |         "             }"
+      |         ~~~~~~~~~~~~~~~~
+  450 |         "          }"
+      |         ~~~~~~~~~~~~~
+  451 |         "          if (setElement) {"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  452 |         "             setElement.innerText = heater.setpoint + ' C';"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  453 |         "          }"
+      |         ~~~~~~~~~~~~~
+  454 |         "        });"
+      |         ~~~~~~~~~~~~~
+  455 |         "        document.getElementById('status').innerText = 'Data updated: ' + new Date().toLocaleTimeString();"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  456 |         "      } else {"
+      |         ~~~~~~~~~~~~~~~~
+  457 |         "        document.getElementById('status').innerText = 'Error fetching data or no heaters found.';"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  458 |         "      }"
+      |         ~~~~~~~~~
+  459 |         "    })"
+      |         ~~~~~~~~
+  460 |         "    .catch(error => {"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~
+  461 |         "       console.error('Error fetching data:', error);"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  462 |         "       document.getElementById('status').innerText = 'Fetch error: ' + error;"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  463 |         "     });"
+      |         ~~~~~~~~~~
+  464 |         "}"
+      |         ~~~
+  465 |         "function setTemp(address, temp) {"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  466 |         "  const addrHex = '0x' + address.toString(16).toUpperCase().padStart(2, '0');"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  467 |         "  document.getElementById('status').innerText = 'Setting ' + addrHex + ' to ' + temp + ' C...';"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  468 |         "  fetch(`/set?address=${address}&temp=${temp}`)" // Use template literal
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  469 |         "    .then(response => {"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~
+  470 |         "       if (response.ok) { "
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  471 |         "         console.log('Setpoint set successfully for ' + addrHex + ' to ' + temp + ' C'); "
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  472 |         "         document.getElementById('status').innerText = 'Setpoint for ' + addrHex + ' set to ' + temp + ' C.';"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  473 |         "         setTimeout(updateData, 500); /* Update data shortly after set */"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  474 |         "       } else { "
+      |         ~~~~~~~~~~~~~~~~~~
+  475 |         "         console.error('Failed to set setpoint for ' + addrHex);"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  476 |         "         response.text().then(text => { document.getElementById('status').innerText = 'Failed to set ' + addrHex + ': ' + text; });"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  477 |         "       } "
+      |         ~~~~~~~~~~~
+  478 |         "    })"
+      |         ~~~~~~~~
+  479 |         "    .catch(error => { "
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~
+  480 |         "      console.error('Error setting temperature for ' + addrHex + ':', error); "
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  481 |         "      document.getElementById('status').innerText = 'Error sending setpoint for ' + addrHex + ': ' + error;"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  482 |         "    });"
+      |         ~~~~~~~~~
+  483 |         "  return false; "
+      |         ~~~~~~~~~~~~~~~~~~
+  484 |         "}"
+      |         ~~~
+  485 |         "document.addEventListener('DOMContentLoaded', () => {"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  486 |         "  updateData();"
+      |         ~~~~~~~~~~~~~~~~~
+  487 |         "  setInterval(updateData, 5000);"
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  488 |         "});"
+      |         ~~~~~
+  489 |         "</script>"
+      |         ~~~~~~~~~~~
+  490 |         "</head>" // Close head tag
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  491 |     );
+      |     ~
+cc1: some warnings being treated as errors
+ninja: build stopped: subcommand failed.

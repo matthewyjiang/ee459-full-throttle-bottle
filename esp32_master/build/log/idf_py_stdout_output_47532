@@ -1,0 +1,83 @@
+[1/10] Performing build step for 'bootloader'
+[1/1] cd /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/bootloader/esp-idf/esptool_py && /Users/xiaolei/.espressif/python_env/idf5.4_py3.13_env/bin/python /Users/xiaolei/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/bootloader/bootloader.bin
+Bootloader binary size 0x6580 bytes. 0xa80 bytes (9%) free.
+[2/10] No install step for 'bootloader'
+[3/10] Completed 'bootloader'
+[4/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/esp32_master.c.obj
+[5/10] Linking C static library esp-idf/main/libmain.a
+[6/10] Generating ld/sections.ld
+[7/10] Linking CXX executable esp32_master.elf
+[8/10] Generating binary image from built executable
+esptool.py v4.8.1
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/esp32_master.bin
+[9/10] cd /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/esp-idf/esptool_py && /Users/xiaolei/.espressif/python_env/idf5.4_py3.13_env/bin/python /Users/xiaolei/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/partition_table/partition-table.bin /Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build/esp32_master.bin
+esp32_master.bin binary size 0xd06e0 bytes. Smallest app partition is 0x100000 bytes. 0x2f920 bytes (19%) free.
+[9/10] cd /Users/xiaolei/esp/esp-idf/components/esptool_py && /opt/homebrew/bin/cmake -D IDF_PATH=/Users/xiaolei/esp/esp-idf -D "SERIAL_TOOL=/Users/xiaolei/.espressif/python_env/idf5.4_py3.13_env/bin/python;;/Users/xiaolei/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/Users/xiaolei/ee459-full-throttle-bottle/esp32_master/build -P /Users/xiaolei/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32 -p /dev/tty.usbserial-0001 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 esp32_master.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.8.1
+Serial port /dev/tty.usbserial-0001
+Connecting...........
+Chip is ESP32-D0WD-V3 (revision v3.1)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: e8:6b:ea:df:5c:b4
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x000e0fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 25984 bytes to 16377...
+Writing at 0x00001000... (100 %)
+Wrote 25984 bytes (16377 compressed) at 0x00001000 in 0.6 seconds (effective 367.2 kbit/s)...
+Hash of data verified.
+Compressed 853728 bytes to 534555...
+Writing at 0x00010000... (3 %)
+Writing at 0x0001cad1... (6 %)
+Writing at 0x00026867... (9 %)
+Writing at 0x00030e11... (12 %)
+Writing at 0x000365e5... (15 %)
+Writing at 0x0003c517... (18 %)
+Writing at 0x00042518... (21 %)
+Writing at 0x000482f7... (24 %)
+Writing at 0x0004e24e... (27 %)
+Writing at 0x00054613... (30 %)
+Writing at 0x00059840... (33 %)
+Writing at 0x0005eb7f... (36 %)
+Writing at 0x000642cb... (39 %)
+Writing at 0x00069a85... (42 %)
+Writing at 0x0006edb9... (45 %)
+Writing at 0x000742dd... (48 %)
+Writing at 0x0007a1b5... (51 %)
+Writing at 0x0007fab3... (54 %)
+Writing at 0x0008555a... (57 %)
+Writing at 0x0008b1fe... (60 %)
+Writing at 0x00090dac... (63 %)
+Writing at 0x000965b4... (66 %)
+Writing at 0x0009c58a... (69 %)
+Writing at 0x000a26b6... (72 %)
+Writing at 0x000a7f17... (75 %)
+Writing at 0x000ad6f2... (78 %)
+Writing at 0x000b6958... (81 %)
+Writing at 0x000bebcb... (84 %)
+Writing at 0x000c48dd... (87 %)
+Writing at 0x000cbe2f... (90 %)
+Writing at 0x000d17b5... (93 %)
+Writing at 0x000d7bd2... (96 %)
+Writing at 0x000dce6a... (100 %)
+Wrote 853728 bytes (534555 compressed) at 0x00010000 in 13.6 seconds (effective 503.0 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 346.4 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

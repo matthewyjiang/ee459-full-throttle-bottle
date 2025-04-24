@@ -11,6 +11,7 @@ idf_component_register(SRCS "esp32_master.c"        # <<< Make sure this filenam
                            esp_netif                # For TCP/IP network interface layer
                            esp_wifi                 # For Wi-Fi driver and configuration
                            log
+                           json
                            lwip                     # For LwIP TCP/IP stack
                            driver                   # For I2C peripheral driver
                            esp_http_server          # For the HTTP Web Server
